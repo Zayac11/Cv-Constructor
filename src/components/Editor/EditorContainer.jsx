@@ -1,7 +1,7 @@
 import React from 'react'
 import Editor from './Editor'
 import {useDispatch, useSelector} from 'react-redux'
-import {deleteSection, setSection, updateSection} from '../../redux/editor-reducer'
+import {addMarkedLine, deleteMarkedLine, deleteSection, setSection, updateSection} from '../../redux/editor-reducer'
 
 const EditorContainer = () => {
 
@@ -9,8 +9,14 @@ const EditorContainer = () => {
 
     const CV = useSelector(state => state.editor.CV)
 
-    const addSection = (section) => {
-        dispatch(setSection({type: section, id: Math.random() * (9999999 - 1) + 1}))
+    const addSection = (content) => {
+        dispatch(setSection(content))
+    }
+    const onAddMarkedLine = (id) => {
+        dispatch(addMarkedLine(id))
+    }
+    const onDeleteMarkedLine = (content) => {
+        dispatch(deleteMarkedLine(content))
     }
 
     const onUpdateSection = (content) => {
@@ -22,7 +28,10 @@ const EditorContainer = () => {
 
     return (
         <>
-            <Editor CV={CV} onDeleteSection={onDeleteSection} addSection={addSection} onUpdateSection={onUpdateSection} />
+            <Editor CV={CV} onDeleteSection={onDeleteSection} addSection={addSection}
+                    onUpdateSection={onUpdateSection} onAddMarkedLine={onAddMarkedLine}
+                    onDeleteMarkedLine={onDeleteMarkedLine}
+            />
         </>
     )
 }
