@@ -1,7 +1,7 @@
 import React from 'react'
-import s from './Textarea.module.scss'
+import s from './EditTextarea.module.scss'
 
-const Textarea = (props) => {
+const EditTextarea = (props) => {
     return (
         <>
             <textarea className={s.textarea} id={props.id} value={props.message}
@@ -15,4 +15,4 @@ const Textarea = (props) => {
     )
 }
 
-export default Textarea
+export default EditTextarea

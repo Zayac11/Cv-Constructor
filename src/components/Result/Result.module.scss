@@ -6,11 +6,17 @@
 
 .item {
     margin-bottom: 20px;
+    color: white;
 }
 
 .text {
-    color: white;
     font-size: 14px;
     white-space: pre-wrap;
     word-break: break-all;
+}
+
+.title {
+    word-break: break-all;
+    font-size: 28px;
+    font-weight: 700;
 }

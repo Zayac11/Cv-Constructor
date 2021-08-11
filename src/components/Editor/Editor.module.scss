@@ -5,15 +5,30 @@
 }
 
 .buttons {
+    display: flex;
     width: inherit;
     max-width: inherit;
+    padding: 10px;
+    flex-wrap: wrap;
     position: fixed;
     bottom: 50px;
     background-color: white;
     margin: auto;
-    min-height: 50px;
 }
 
 .item {
     margin-bottom: 20px;
+}
+
+.button {
+    display: block;
+    margin-right: 10px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    color: black;
+    font-size: 12px;
+    background-color: transparent;
+    padding: 5px 15px;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import s from './Editor.module.scss'
-import Textarea from '../../common/sections/Textarea/Textarea'
+import EditTextarea from '../../common/sections/Textarea/EditTextarea'
+import EditTitle from '../../common/sections/Title/EditTitle'
 
 const Editor = (props) => {
 
@@ -16,8 +17,11 @@ const Editor = (props) => {
                                     <div className={s.item} key={index}>
                                         {
                                             cv.type === 'text' ? (
-                                                <Textarea id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} />
-                                            ) : <></>
+                                                <EditTextarea id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} />
+                                            ) : cv.type === 'title' ? (
+                                                <EditTitle id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} />
+                                            )
+                                                : <></>
                                         }
                                     </div>
                                 )
@@ -26,7 +30,8 @@ const Editor = (props) => {
                 </div>
 
                 <div className={s.buttons}>
-                    <button name={'text'} onClick={() => props.addSection('text')}>текст</button>
+                    <button className={s.button} onClick={() => props.addSection('text')}>Текст</button>
+                    <button className={s.button} onClick={() => props.addSection('title')}>Заголовок</button>
                 </div>
             </div>
         </>

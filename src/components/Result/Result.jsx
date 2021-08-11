@@ -16,7 +16,12 @@ const Result = ({CV}) => {
                                             <div className={s.text}>
                                                 {cv.message}
                                             </div>
-                                        ) : <></>
+                                        ) : cv.type === 'title' ? (
+                                            <div className={s.title}>
+                                                {cv.message}
+                                            </div>
+                                        )
+                                            : <></>
                                     }
                                 </div>
                             )
