@@ -6,3 +6,24 @@
     outline: none;
     width: 100%;
 }
+
+.container {
+    position: relative;
+}
+
+.cross {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    & img {
+        width: 20px;
+        height: 20px;
+    }
+}

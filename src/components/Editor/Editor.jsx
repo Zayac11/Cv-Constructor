@@ -18,11 +18,11 @@ const Editor = (props) => {
                                     <div className={s.item} key={index}>
                                         {
                                             cv.type === 'text' ? (
-                                                <EditTextarea id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} />
+                                                <EditTextarea id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} onDeleteSection={props.onDeleteSection} />
                                             ) : cv.type === 'title' ? (
-                                                <EditTitle id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} />
+                                                <EditTitle id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} onDeleteSection={props.onDeleteSection} />
                                             ): cv.type === 'subtitle' ? (
-                                                <EditSubtitle id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} />
+                                                <EditSubtitle id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} onDeleteSection={props.onDeleteSection} />
                                             )
                                                 : <></>
                                         }

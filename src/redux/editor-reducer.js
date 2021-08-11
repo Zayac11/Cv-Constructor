@@ -1,5 +1,6 @@
 const SET_SECTION = 'SET_SECTION'
 const UPDATE_SECTION = 'UPDATE_SECTION'
+const DELETE_SECTION = 'DELETE_SECTION'
 
 let initialState = {
     CV: [
@@ -16,6 +17,11 @@ const editorReducer = (state = initialState, action) => {
             return {
                 ...state,
                 CV: [...state.CV, action.content]
+            }
+        case DELETE_SECTION:
+            return {
+                ...state,
+                CV: state.CV.filter(cv => cv.id !== action.id)
             }
         case UPDATE_SECTION:
             switch (action.content.type) {
@@ -36,22 +42,9 @@ const editorReducer = (state = initialState, action) => {
                                 ...cv //иначе просто делаем копию объекта, без изменений
                             }) )
                     }
-                // case 'title':
-                //     return {
-                //         ...state,
-                //         CV: state.CV.map(cv => action.content.id === cv.id //мапаем массив cv и ищем совпадение по айдишнику
-                //             ?
-                //             (
-                //                 {
-                //                     ...cv,
-                //                     message: action.content.message, //Меняем мессадж
-                //                 }
-                //             )
-                //             : ({
-                //                 ...cv //иначе просто делаем копию объекта, без изменений
-                //             }) )
-                //     }
-                default: return state
+
+                default:
+                    return state
             }
         default:
             return state;
@@ -60,6 +53,7 @@ const editorReducer = (state = initialState, action) => {
 
 export const setSection = (content) => ({type: SET_SECTION, content})
 export const updateSection = (content) => ({type: UPDATE_SECTION, content})
+export const deleteSection = (id) => ({type: DELETE_SECTION, id})
 
 export const getProjectData = (projectId, private_or_union) => { //Получение информации о проекте
     return async (dispatch) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Editor from './Editor'
 import {useDispatch, useSelector} from 'react-redux'
-import {setSection, updateSection} from '../../redux/editor-reducer'
+import {deleteSection, setSection, updateSection} from '../../redux/editor-reducer'
 
 const EditorContainer = () => {
 
@@ -16,10 +16,13 @@ const EditorContainer = () => {
     const onUpdateSection = (content) => {
         dispatch(updateSection(content))
     }
+    const onDeleteSection = (id) => {
+        dispatch(deleteSection(id))
+    }
 
     return (
         <>
-            <Editor CV={CV} addSection={addSection} onUpdateSection={onUpdateSection} />
+            <Editor CV={CV} onDeleteSection={onDeleteSection} addSection={addSection} onUpdateSection={onUpdateSection} />
         </>
     )
 }
