@@ -11,6 +11,7 @@
 
 .text {
     font-size: 14px;
+    color: rgba(255, 255, 255, .7);
     white-space: pre-wrap;
     word-break: break-all;
 }
@@ -19,4 +20,9 @@
     word-break: break-all;
     font-size: 28px;
     font-weight: 700;
+}
+.subtitle {
+    word-break: break-all;
+    font-size: 16px;
+    font-weight: 500;
 }

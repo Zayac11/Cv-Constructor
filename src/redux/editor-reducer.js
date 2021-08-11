@@ -4,6 +4,7 @@ const UPDATE_SECTION = 'UPDATE_SECTION'
 let initialState = {
     CV: [
         {id: 322, type: 'title', message: 'Тайтлец!'},
+        {id: 112, type: 'subtitle', message: 'Субботний Тайтлец!'},
         {id: 228, type: 'text', message: 'Всем ку!'},
     ], //резюме
 
@@ -19,20 +20,7 @@ const editorReducer = (state = initialState, action) => {
         case UPDATE_SECTION:
             switch (action.content.type) {
                 case 'text':
-                    return {
-                        ...state,
-                        CV: state.CV.map(cv => action.content.id === cv.id //мапаем массив cv и ищем совпадение по айдишнику
-                            ?
-                            (
-                                {
-                                    ...cv,
-                                    message: action.content.message, //Меняем мессадж
-                                }
-                            )
-                            : ({
-                                ...cv //иначе просто делаем копию объекта, без изменений
-                            }) )
-                    }
+                case 'subtitle':
                 case 'title':
                     return {
                         ...state,
@@ -48,6 +36,21 @@ const editorReducer = (state = initialState, action) => {
                                 ...cv //иначе просто делаем копию объекта, без изменений
                             }) )
                     }
+                // case 'title':
+                //     return {
+                //         ...state,
+                //         CV: state.CV.map(cv => action.content.id === cv.id //мапаем массив cv и ищем совпадение по айдишнику
+                //             ?
+                //             (
+                //                 {
+                //                     ...cv,
+                //                     message: action.content.message, //Меняем мессадж
+                //                 }
+                //             )
+                //             : ({
+                //                 ...cv //иначе просто делаем копию объекта, без изменений
+                //             }) )
+                //     }
                 default: return state
             }
         default:
