@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './Container.module.scss'
-import Result from './Result/Result'
 import EditorContainer from './Editor/EditorContainer'
+import ResultContainer from './Result/ResultContainer'
 
 const Container = () => {
     return (
@@ -10,7 +10,7 @@ const Container = () => {
                 <div className={s.container}>
                     <EditorContainer />
 
-                    <Result />
+                    <ResultContainer />
                 </div>
             </div>
         </div>

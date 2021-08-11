@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './Editor.module.scss'
+import Textarea from '../../common/sections/Textarea/Textarea'
 
 const Editor = (props) => {
 
@@ -9,24 +10,16 @@ const Editor = (props) => {
             <div className={s.editor}>
                 <div>
                     {
-                        props.CV && props.CV.length &&
+                        props.CV && props.CV.length > 0 &&
                             props.CV.map((cv, index) => {
                                 return (
-
-                                        <div key={index}>
-                                            {
-                                                cv.type === 'text' ? (
-                                                    <textarea id={cv.id} value={cv.message}
-                                                              onChange={(e) => props.onUpdateSection({
-                                                                  message: e.target.value,
-                                                                  type:'text',
-                                                                  id: cv.id
-                                                              })}
-                                                              name='text' />
-                                                ) : <></>
-                                            }
-                                        </div>
-
+                                    <div className={s.item} key={index}>
+                                        {
+                                            cv.type === 'text' ? (
+                                                <Textarea id={cv.id} message={cv.message} onUpdateSection={props.onUpdateSection} />
+                                            ) : <></>
+                                        }
+                                    </div>
                                 )
                             })
                     }

@@ -10,11 +10,10 @@ const EditorContainer = () => {
     const CV = useSelector(state => state.editor.CV)
 
     const addSection = (section) => {
-        dispatch(setSection({type: section}))
+        dispatch(setSection({type: section, id: Math.random() * (9999999 - 1) + 1}))
     }
 
     const onUpdateSection = (content) => {
-        debugger
         dispatch(updateSection(content))
     }
 
