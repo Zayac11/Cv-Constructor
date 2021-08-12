@@ -1,7 +1,7 @@
 import React from 'react'
 import Editor from './Editor'
 import {useDispatch, useSelector} from 'react-redux'
-import {addMarkedLine, deleteMarkedLine, deleteSection, setSection, updateSection} from '../../redux/editor-reducer'
+import {addLine, deleteLine, deleteSection, setSection, updateSection} from '../../redux/editor-reducer'
 
 const EditorContainer = () => {
 
@@ -12,11 +12,11 @@ const EditorContainer = () => {
     const addSection = (content) => {
         dispatch(setSection(content))
     }
-    const onAddMarkedLine = (id) => {
-        dispatch(addMarkedLine(id))
+    const onAddLine = (id) => {
+        dispatch(addLine(id))
     }
-    const onDeleteMarkedLine = (content) => {
-        dispatch(deleteMarkedLine(content))
+    const onDeleteLine = (content) => {
+        dispatch(deleteLine(content))
     }
 
     const onUpdateSection = (content) => {
@@ -29,8 +29,8 @@ const EditorContainer = () => {
     return (
         <>
             <Editor CV={CV} onDeleteSection={onDeleteSection} addSection={addSection}
-                    onUpdateSection={onUpdateSection} onAddMarkedLine={onAddMarkedLine}
-                    onDeleteMarkedLine={onDeleteMarkedLine}
+                    onUpdateSection={onUpdateSection} onAddLine={onAddLine}
+                    onDeleteLine={onDeleteLine}
             />
         </>
     )

@@ -1,8 +1,8 @@
 const SET_SECTION = 'SET_SECTION'
 const UPDATE_SECTION = 'UPDATE_SECTION'
 const DELETE_SECTION = 'DELETE_SECTION'
-const ADD_MARKED_LINE = 'ADD_MARKED_LINE'
-const DELETE_MARKED_LINE = 'DELETE_MARKED_LINE'
+const ADD_LINE = 'ADD_LINE'
+const DELETE_LINE = 'DELETE_LINE'
 
 let initialState = {
     CV: [
@@ -12,6 +12,9 @@ let initialState = {
         {id: 911, type: 'marked_list', list: [
                 {message: 'Ммммм', name: 'list0'},
                 {message: 'Геее ггггей', name: 'list1'}
+            ]},
+        {id: 633, type: 'link', list: [
+                {link: 'https://vk.com/alexgeniusman', title: 'воконтактик', name: 'list0'},
             ]},
     ], //резюме
 
@@ -49,7 +52,6 @@ const editorReducer = (state = initialState, action) => {
                             }) )
                     }
                 case 'marked_list':
-
                     return {
                         ...state,
                         CV: state.CV.map(cv => action.content.id === cv.id //мапаем массив cv и ищем совпадение по айдишнику
@@ -78,11 +80,41 @@ const editorReducer = (state = initialState, action) => {
                                 ...cv //иначе просто делаем копию объекта, без изменений
                             }) )
                     }
+                case 'link':
+                    return {
+                        ...state,
+                        CV: state.CV.map(cv => action.content.id === cv.id //мапаем массив cv и ищем совпадение по айдишнику
+                            ?
+                            (
+                                {
+                                    ...cv,
+                                    list: cv.list.map((list) => {
+                                        return (
+                                            action.content.name === list.name
+                                                ?
+                                                ({
+                                                    ...list,
+                                                    link: action.content.link,
+                                                    title: action.content.title,
+                                                })
+                                                :
+                                                ({
+                                                    ...list
+                                                })
+                                        )
+                                        }
+                                    )
+                                }
+                            )
+                            : ({
+                                ...cv //иначе просто делаем копию объекта, без изменений
+                            }) )
+                    }
 
                 default:
                     return state
             }
-        case ADD_MARKED_LINE:
+        case ADD_LINE:
             return {
                 ...state,
                 CV: state.CV.map(cv => action.id === cv.id //мапаем массив cv и ищем совпадение по айдишнику
@@ -98,7 +130,7 @@ const editorReducer = (state = initialState, action) => {
                         ...cv //иначе просто делаем копию объекта, без изменений
                     }) )
             }
-        case DELETE_MARKED_LINE:
+        case DELETE_LINE:
             return {
                 ...state,
                 CV: state.CV.map(cv => action.content.id === cv.id //мапаем массив cv и ищем совпадение по айдишнику
@@ -121,8 +153,8 @@ const editorReducer = (state = initialState, action) => {
 export const setSection = (content) => ({type: SET_SECTION, content})
 export const updateSection = (content) => ({type: UPDATE_SECTION, content})
 export const deleteSection = (id) => ({type: DELETE_SECTION, id})
-export const addMarkedLine = (id) => ({type: ADD_MARKED_LINE, id})
-export const deleteMarkedLine = (content) => ({type: DELETE_MARKED_LINE, content})
+export const addLine = (id) => ({type: ADD_LINE, id})
+export const deleteLine = (content) => ({type: DELETE_LINE, content})
 
 export const getProjectData = (projectId, private_or_union) => { //Получение информации о проекте
     return async (dispatch) => {

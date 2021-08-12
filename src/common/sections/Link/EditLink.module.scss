@@ -1,0 +1,51 @@
+.container {
+    position: relative;
+}
+
+.footer {
+    margin-top: 25px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.inputCross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: auto;
+}
+
+.cross {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    & img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.inputContainer {
+    position: relative;
+}
+
+.input {
+    display: block;
+    margin-bottom: 10px;
+    outline: none;
+    width: 100%;
+    padding: 10px 30px 10px 10px;
+}
+
+.addBtn {
+    outline: none;
+    border: none;
+    background-color: white;
+    padding: 7px 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+

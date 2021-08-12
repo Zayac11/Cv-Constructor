@@ -1,0 +1,23 @@
+.marked {
+
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+.item {
+    color: #fff;
+    display: block;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2px;
+    font-size: 14px;
+    transition: all .4s ease;
+
+    &:hover {
+        color: #a6a6a6;
+        border-color: #a6a6a6;
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import s from './Result.module.scss'
 import ResultMarkedList from '../../common/sections/MarkedList/ResultMarkedList'
+import ResultLink from '../../common/sections/Link/ResultLink'
 
 const Result = ({CV}) => {
     return (
@@ -27,6 +28,8 @@ const Result = ({CV}) => {
                                             </div>
                                         ) : cv.type === 'marked_list' ? (
                                             <ResultMarkedList list={cv.list} />
+                                        ) : cv.type === 'link' ? (
+                                            <ResultLink list={cv.list} />
                                         )
                                             : <></>
                                     }
