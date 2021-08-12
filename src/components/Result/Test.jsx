@@ -1,19 +1,9 @@
-import React, {useState} from 'react'
-import {useHistory} from 'react-router-dom'
-import ReactMarkdown from 'react-markdown'
-import gfm from 'remark-gfm'
+import React from 'react'
 
 const Test = () => {
 
-    const [value, setValue] = useState('')
-    let history = useHistory()
-
     return (
         <div>
-            {/*<textarea name='name1' value={value} onChange={(e) => setValue(e.target.value)} />*/}
-            {/*<hr/>*/}
-            {/*<ReactMarkdown remarkPlugins={[gfm]} children={value} />*/}
-
             <svg width='500' height='500'
                  viewBox='0 0 500 500'
                  xmlns='http://www.w3.org/2000/svg'>
@@ -26,7 +16,7 @@ const Test = () => {
                         window.location =
                             ('https://vk.com/alexgeniusman')
                     }} />
-
+                    <path d="m 50 45 l 50 0" fill="transparent" stroke="black"/>
                 </>
 
             </svg>

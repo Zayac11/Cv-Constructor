@@ -44,7 +44,7 @@ const Result = ({CV}) => {
 
             </div>
 
-            <Test />
+            {/*<Test />*/}
 
         </>
     )
