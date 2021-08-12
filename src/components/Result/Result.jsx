@@ -2,6 +2,9 @@ import React from 'react'
 import s from './Result.module.scss'
 import ResultMarkedList from '../../common/sections/MarkedList/ResultMarkedList'
 import ResultLink from '../../common/sections/Link/ResultLink'
+import ReactMarkdown from 'react-markdown'
+import gfm from 'remark-gfm'
+import Test from './Test'
 
 const Result = ({CV}) => {
     return (
@@ -16,7 +19,8 @@ const Result = ({CV}) => {
                                     {
                                         cv.type === 'text' ? (
                                             <div className={s.text}>
-                                                {cv.message}
+                                                <ReactMarkdown remarkPlugins={[gfm]} children={cv.message} />
+                                                {/*{cv.message}*/}
                                             </div>
                                         ) : cv.type === 'title' ? (
                                             <div className={s.title}>
@@ -39,6 +43,8 @@ const Result = ({CV}) => {
                 }
 
             </div>
+
+            <Test />
 
         </>
     )

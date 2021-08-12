@@ -14,7 +14,6 @@ const EditMarkedList = (props) => {
             {
                 props.list && props.list.length > 0 &&
                     props.list.map((item, index) => {
-
                         return (
                             <div className={s.inputContainer} key={index}>
                                 <input className={s.input} type='text' value={item.message} name={item.name}
