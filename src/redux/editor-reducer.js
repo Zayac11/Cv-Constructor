@@ -6,20 +6,20 @@ const DELETE_LINE = 'DELETE_LINE'
 
 let initialState = {
     CV: [
-        {id: 228, type: 'text', message: `| hobby | match |
-| :------: | :-----------: |
-| games | ✔ |
-| sing song | ✔ |
-| js | ✔ |`},
-        {id: 322, type: 'title', message: 'Тайтлец!'},
-        {id: 112, type: 'subtitle', message: 'Субботний Тайтлец!'},
-        {id: 911, type: 'marked_list', list: [
-                {message: 'Ммммм', name: 'list0'},
-                {message: 'Геее ггггей', name: 'list1'}
-            ]},
-        {id: 633, type: 'link', list: [
-                {link: 'https://vk.com/alexgeniusman', title: 'воконтактик', name: 'list0'},
-            ]},
+//         {id: 228, type: 'text', message: `| hobby | match |
+// | :------: | :-----------: |
+// | games | ✔ |
+// | sing song | ✔ |
+// | js | ✔ |`},
+//         {id: 322, type: 'title', message: 'Тайтлец!'},
+//         {id: 112, type: 'subtitle', message: 'Субботний Тайтлец!'},
+//         {id: 911, type: 'marked_list', list: [
+//                 {message: 'Ммммм', name: 'list0'},
+//                 {message: 'Геее ггггей', name: 'list1'}
+//             ]},
+//         {id: 633, type: 'link', list: [
+//                 {link: 'https://vk.com/alexgeniusman', title: 'воконтактик', name: 'list0'},
+//             ]},
     ], //резюме
 
 }

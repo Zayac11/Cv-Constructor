@@ -4,7 +4,6 @@ import ResultMarkedList from '../../common/sections/MarkedList/ResultMarkedList'
 import ResultLink from '../../common/sections/Link/ResultLink'
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
-import Test from './Test'
 
 const Result = ({CV}) => {
     return (
@@ -43,8 +42,6 @@ const Result = ({CV}) => {
                 }
 
             </div>
-
-            {/*<Test />*/}
 
         </>
     )

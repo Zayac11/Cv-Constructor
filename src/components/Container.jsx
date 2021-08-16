@@ -2,6 +2,8 @@ import React from 'react'
 import s from './Container.module.scss'
 import EditorContainer from './Editor/EditorContainer'
 import ResultContainer from './Result/ResultContainer'
+import Test from './Result/Test'
+import Test2 from './Result/Test2'
 
 const Container = () => {
     return (
@@ -12,6 +14,8 @@ const Container = () => {
 
                     <ResultContainer />
                 </div>
+                {/*<Test />*/}
+                <Test2 />
             </div>
         </div>
     )
