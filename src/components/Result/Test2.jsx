@@ -71,7 +71,20 @@ const Test2 = () => {
                     {
                         id: 'Common',
                         children: [
-                            { id: 'Bagging', value: 'Bagging' },
+                            { id: 'Bagging', value: 'Bagging',
+                                children: [
+                                    { id: 'asds', value: 'asds' },
+                                    { id: '43342', value: '43342',
+                                        children:[
+                                            { id: 'Alo', value: 'Kamon'}
+                                        ]
+                                    },
+                                    { id: 'dsadasds', value: 'dsadasds',
+                                        children:[
+                                            { id: 'Aso', value: 'Kamon'},
+                                        ]
+                                    },
+                            ],},
                             { id: 'Boosting', value: 'Boosting' },
                             { id: 'AdaBoost', value: 'AdaBoost' },
                         ],
