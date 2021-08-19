@@ -41,7 +41,7 @@ const assembleChildNode = (childNode, numLeaves = 2) => {
     }
 };
 
-const connectMainNodes = (source, target, distance = 200, color = 'grey') => {
+const connectMainNodes = (source, target, distance = 75, color = '#4C514A') => {
     links.push({
         source,
         target,
@@ -50,120 +50,85 @@ const connectMainNodes = (source, target, distance = 200, color = 'grey') => {
     });
 };
 
-const treeBuilder = (rooms, root) => {
-    rooms.map((room, index) => {
+const treeBuilder = (roomIds, root) => {
+    roomIds.map((roomId) => {
+        const findingObj = nodes.find(node => node.id === roomId)
+        const connected_rooms = findingObj.connected_rooms
 
-        let roomObj = {id: room.id, is_checked: room.is_checked, name: room.name }
-
-        const findingObj = nodes.find(node => node.id === room.id)
-        if(!findingObj) {
-
-            addMainNode(roomObj)
-            connectMainNodes(root, roomObj, 75)
-
-            room.connected_rooms &&
-            room.connected_rooms.length > 0 ?
-                treeBuilder(room.connected_rooms, roomObj)
-                : assembleChildNode(roomObj)
-
-
+        if(roomIds.length <= 1) {
+            connectMainNodes(root, findingObj, 75)
+            assembleChildNode(root)
+        }
+        else if (connected_rooms.length <= 1) {
+            connectMainNodes(root, findingObj, 75)
+        }
+        else if (roomIds.length <= 3) {
+            connectMainNodes(root, findingObj, 150)
         }
         else {
-            // debugger
-            connectMainNodes(root, findingObj, 100)
-
-            room.connected_rooms &&
-            room.connected_rooms.length > 0 ?
-                treeBuilder(room.connected_rooms, findingObj)
-                : assembleChildNode(findingObj)
+            connectMainNodes(root, findingObj, 300)
         }
         return 0
-    }
-
-    )
+    })
 
 }
 
-const example = {
-    is_checked: true,
-    id: '0',
-    name: 'zero',
-    connected_rooms: [
-        {id: '1',
-            name: 'un',
+const example =
+    [
+        {
+            id: 1,
+            name: "Комната 1",
+            connected_rooms: [2,5],
             is_checked: true,
-            connected_rooms: [
-                {id: '4',
-                    name: 'quatre',
-                    is_checked: false,},
-                {id: '5',
-                    name: 'cinq',
-                    is_checked: true,},
-                {id: '6',
-                    name: 'six',
-                    is_checked: true,},
-            ],
         },
-
-        {id: '2',
-            name: 'deux',
-            is_checked: false,},
-
-        {id: '3',
-            name: 'trois',
+        {
+            id: 2,
+            name: "Комната 2",
+            connected_rooms: [1,3,4,7],
             is_checked: false,
-            connected_rooms: [
-                {id: '2',
-                    name: 'deux',
-                    is_checked: false,},
-                {id: '6',
-                    name: 'six',
-                    is_checked: true,},
-            ],
         },
-
-        {id: '4',
-            name: 'quatre',
+        {
+            id: 3,
+            name: "Комната 3",
+            connected_rooms: [2,4,7],
             is_checked: false,
-            connected_rooms: [
-                {id: '7',
-                    name: 'sept',
-                    is_checked: false,},
-                {id: '8',
-                    name: 'huit',
-                    is_checked: true,},
-            ],
         },
-        {id: '5',
-            name: 'cinq',
-            is_checked: false,
-            connected_rooms: [
-                {id: '9',
-                    is_checked: true,
-                    name: 'neuf'},
-                {id: '10',
-                    is_checked: true,
-                    name: 'dix'},
-            ],},
-        {id: '6',
-            name: 'six',
+        {
+            id: 4,
+            name: "Комната 4",
+            connected_rooms: [2,3,5,6],
             is_checked: true,
-            connected_rooms: [
-                {id: '11',
-                    name: 'onze',
-                    is_checked: true,},
-                {id: '12',
-                    name: 'douze',
-                    is_checked: false,},
-            ],},
-    ],
-}
+        },
+        {
+            id: 5,
+            name: "Комната 5",
+            connected_rooms: [1,2,3,4,6],
+            is_checked: true,
+        },
+        {
+            id: 6,
+            name: "Комната 6",
+            connected_rooms: [2,3,4,5],
+            is_checked: true,
+        },
+        {
+            id: 7,
+            name: "Комната 7",
+            connected_rooms: [2,3],
+            is_checked: true,
+        },
+    ]
 
-const mainNode = { id: example.id, is_checked: example.is_checked, name: example.name }
-addMainNode(mainNode)
-example.connected_rooms &&
-example.connected_rooms.length > 0 &&
-treeBuilder(example.connected_rooms, nodes[0])
+// const mainNode = { id: example.id, is_checked: example.is_checked, name: example.name }
+
+example && example.length > 0 &&
+example.map((room, index) => addMainNode(room))
+
+example.map((room, index) => treeBuilder(room.connected_rooms, room))
+
+// example.connected_rooms &&
+// example.connected_rooms.length > 0 &&
+// treeBuilder(example.connected_rooms, nodes[0])
 
 console.log('nodes', nodes)
 
