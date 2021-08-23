@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/cv-constructor/static/css/main.1afb1b63.chunk.css",
+    "main.js": "/cv-constructor/static/js/main.080b3560.chunk.js",
+    "main.js.map": "/cv-constructor/static/js/main.080b3560.chunk.js.map",
+    "runtime-main.js": "/cv-constructor/static/js/runtime-main.2c8f09fd.js",
+    "runtime-main.js.map": "/cv-constructor/static/js/runtime-main.2c8f09fd.js.map",
+    "static/js/2.10c57ac3.chunk.js": "/cv-constructor/static/js/2.10c57ac3.chunk.js",
+    "static/js/2.10c57ac3.chunk.js.map": "/cv-constructor/static/js/2.10c57ac3.chunk.js.map",
+    "static/js/3.4600336f.chunk.js": "/cv-constructor/static/js/3.4600336f.chunk.js",
+    "static/js/3.4600336f.chunk.js.map": "/cv-constructor/static/js/3.4600336f.chunk.js.map",
+    "2e6ead51b2591d2f852d25223e59b884.js": "/cv-constructor/2e6ead51b2591d2f852d25223e59b884.js",
+    "2e6ead51b2591d2f852d25223e59b884.js.LICENSE.txt": "/cv-constructor/2e6ead51b2591d2f852d25223e59b884.js.LICENSE.txt",
+    "index.html": "/cv-constructor/index.html",
+    "static/css/main.1afb1b63.chunk.css.map": "/cv-constructor/static/css/main.1afb1b63.chunk.css.map",
+    "static/js/2.10c57ac3.chunk.js.LICENSE.txt": "/cv-constructor/static/js/2.10c57ac3.chunk.js.LICENSE.txt",
+    "static/media/cross.ae506d6c.svg": "/cv-constructor/static/media/cross.ae506d6c.svg",
+    "static/media/Подольский_ИНБО-04-19_трпп_4.edfad13b.pdf": "/cv-constructor/static/media/Подольский_ИНБО-04-19_трпп_4.edfad13b.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c8f09fd.js",
+    "static/js/2.10c57ac3.chunk.js",
+    "static/css/main.1afb1b63.chunk.css",
+    "static/js/main.080b3560.chunk.js"
+  ]
+}
