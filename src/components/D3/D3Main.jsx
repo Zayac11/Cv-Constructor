@@ -13,9 +13,7 @@ import React, {useEffect} from 'react'
 // import {drag} from 'd3-drag'
 
 import * as d3 from 'd3'
-
 import {nodes, links, MANY_BODY_STRENGTH} from './D3Data'
-
 
 const D3Main = (props) => {
 
@@ -24,12 +22,11 @@ const D3Main = (props) => {
 
     svg = d3.select('#container')
 
-
     const width = +svg.attr('width')
     const height = +svg.attr('height')
-        // debugger
-    const centerX = width / 3
-    const centerY = height / 3
+    // debugger
+    const centerX = width / 4
+    const centerY = height / 4
     // svg.attr("transform","translate(0,0)scale(.5,.5)");
 
     const simulation = d3.forceSimulation(nodes)
@@ -48,16 +45,6 @@ const D3Main = (props) => {
     zoom_handler(svg)
 
     let g = svg.append("svg:g")
-    // .attr("class", "everything")
-    // .call(zoom_handler)
-    // .call(zoom.on("zoom",zoom_handler))
-    // .append("svg:g")
-    // .attr("transform","translate(100,50)scale(.5,.5)");
-
-    // .call(zoom_handler)
-    // .call(zoom.transform, zoomIdentity.translate(100, 50).scale(0.5))
-    // .append("svg:g")
-    // .attr("transform","translate(100,50) scale(.5,.5)");
 
     const lines = g.append('g')
         .attr("class", "links")
@@ -150,7 +137,7 @@ const D3Main = (props) => {
 
     return (
         <>
-            <svg id='container' width='1400' height='960'></svg>
+            <svg id='container' width='1000' height='960'> </svg>
         </>
     )
 }
