@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/Cv-Constructor/static/css/main.1afb1b63.chunk.css",
-    "main.js": "/Cv-Constructor/static/js/main.5182eed6.chunk.js",
-    "main.js.map": "/Cv-Constructor/static/js/main.5182eed6.chunk.js.map",
-    "runtime-main.js": "/Cv-Constructor/static/js/runtime-main.2b012a9e.js",
-    "runtime-main.js.map": "/Cv-Constructor/static/js/runtime-main.2b012a9e.js.map",
-    "static/js/2.572c8cba.chunk.js": "/Cv-Constructor/static/js/2.572c8cba.chunk.js",
-    "static/js/2.572c8cba.chunk.js.map": "/Cv-Constructor/static/js/2.572c8cba.chunk.js.map",
-    "static/js/3.4600336f.chunk.js": "/Cv-Constructor/static/js/3.4600336f.chunk.js",
-    "static/js/3.4600336f.chunk.js.map": "/Cv-Constructor/static/js/3.4600336f.chunk.js.map",
+    "main.js": "/Cv-Constructor/static/js/main.456be1a1.chunk.js",
+    "main.js.map": "/Cv-Constructor/static/js/main.456be1a1.chunk.js.map",
+    "runtime-main.js": "/Cv-Constructor/static/js/runtime-main.d7c76a8c.js",
+    "runtime-main.js.map": "/Cv-Constructor/static/js/runtime-main.d7c76a8c.js.map",
+    "static/js/2.d13a1407.chunk.js": "/Cv-Constructor/static/js/2.d13a1407.chunk.js",
+    "static/js/2.d13a1407.chunk.js.map": "/Cv-Constructor/static/js/2.d13a1407.chunk.js.map",
+    "static/js/3.70e5fc71.chunk.js": "/Cv-Constructor/static/js/3.70e5fc71.chunk.js",
+    "static/js/3.70e5fc71.chunk.js.map": "/Cv-Constructor/static/js/3.70e5fc71.chunk.js.map",
     "2e6ead51b2591d2f852d25223e59b884.js": "/Cv-Constructor/2e6ead51b2591d2f852d25223e59b884.js",
     "2e6ead51b2591d2f852d25223e59b884.js.LICENSE.txt": "/Cv-Constructor/2e6ead51b2591d2f852d25223e59b884.js.LICENSE.txt",
     "index.html": "/Cv-Constructor/index.html",
     "static/css/main.1afb1b63.chunk.css.map": "/Cv-Constructor/static/css/main.1afb1b63.chunk.css.map",
-    "static/js/2.572c8cba.chunk.js.LICENSE.txt": "/Cv-Constructor/static/js/2.572c8cba.chunk.js.LICENSE.txt",
+    "static/js/2.d13a1407.chunk.js.LICENSE.txt": "/Cv-Constructor/static/js/2.d13a1407.chunk.js.LICENSE.txt",
     "static/media/cross.ae506d6c.svg": "/Cv-Constructor/static/media/cross.ae506d6c.svg",
     "static/media/Подольский_ИНБО-04-19_трпп_4.edfad13b.pdf": "/Cv-Constructor/static/media/Подольский_ИНБО-04-19_трпп_4.edfad13b.pdf"
   },
   "entrypoints": [
-    "static/js/runtime-main.2b012a9e.js",
-    "static/js/2.572c8cba.chunk.js",
+    "static/js/runtime-main.d7c76a8c.js",
+    "static/js/2.d13a1407.chunk.js",
     "static/css/main.1afb1b63.chunk.css",
-    "static/js/main.5182eed6.chunk.js"
+    "static/js/main.456be1a1.chunk.js"
   ]
 }
