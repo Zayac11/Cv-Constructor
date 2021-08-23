@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import {isDesktop, isMobile} from 'react-device-detect'
 
 // import {
 //     forceSimulation,
@@ -22,11 +23,23 @@ const D3Main = (props) => {
 
     svg = d3.select('#container')
 
-    const width = +svg.attr('width')
-    const height = +svg.attr('height')
+    // const width = +svg.attr('width')
+    // const height = +svg.attr('height')
     // debugger
-    const centerX = 0
-    const centerY = 0
+    let centerX, centerY
+
+    if(isMobile) {
+        centerX = document.body.offsetWidth / 2
+        centerY = document.body.offsetHeight / 3
+    }
+    else if (isDesktop) {
+        centerX = 325
+        centerY = document.body.offsetHeight / 3
+    }
+    else {
+        centerX = 325
+        centerY = document.body.offsetHeight / 3
+    }
     // svg.attr("transform","translate(0,0)scale(.5,.5)");
 
     const simulation = d3.forceSimulation(nodes)
@@ -137,7 +150,7 @@ const D3Main = (props) => {
 
     return (
         <div style={{width: 650}}>
-            <svg id='container'  viewBox="-325 -275 800 1000" preserveAspectRatio="xMidYMid meet"
+            <svg id='container'  viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet"
             > </svg>
         </div>
     )
