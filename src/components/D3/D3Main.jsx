@@ -136,10 +136,10 @@ const D3Main = (props) => {
     }, [])
 
     return (
-        <>
-            <svg id='container' viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet"
+        <div style={{width: 650}}>
+            <svg id='container'  viewBox="-325 -275 800 1000" preserveAspectRatio="xMidYMid meet"
             > </svg>
-        </>
+        </div>
     )
 }
 
