@@ -2,7 +2,7 @@
   "name": "cv_constructor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zayac11.github.io/cv-constructor",
+  "homepage": "https://zayac11.github.io/Cv-Constructor/",
   "dependencies": {
     "@ant-design/charts": "^1.2.7",
     "@testing-library/jest-dom": "^5.14.1",
