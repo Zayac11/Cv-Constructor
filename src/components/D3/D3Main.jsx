@@ -25,8 +25,8 @@ const D3Main = (props) => {
     const width = +svg.attr('width')
     const height = +svg.attr('height')
     // debugger
-    const centerX = width / 4
-    const centerY = height / 4
+    const centerX = 0
+    const centerY = 0
     // svg.attr("transform","translate(0,0)scale(.5,.5)");
 
     const simulation = d3.forceSimulation(nodes)
@@ -137,7 +137,8 @@ const D3Main = (props) => {
 
     return (
         <>
-            <svg id='container' width='1000' height='960'> </svg>
+            <svg id='container' viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet"
+            > </svg>
         </>
     )
 }
