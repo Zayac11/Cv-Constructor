@@ -26,7 +26,11 @@ const Container = () => {
 
 
             {/*</div>*/}
-                <D3Main />
+            {/*    <D3Main />*/}
+            {/*    <QRcodeComponent />*/}
+            <div>
+                {document.body.offsetWidth}
+            </div>
         </div>
     )
 }
